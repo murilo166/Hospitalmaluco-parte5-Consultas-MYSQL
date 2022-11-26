@@ -41,14 +41,14 @@ select max(valor_consulta),data_consulta,hora_consulta,valor_consulta,quantidade
 select  data_efetivada,data_entrada,data_alta,procedimento,enfermeiro,medico,quarto,numero_quarto from internaçao  join quarto on internaçao.quarto=quarto.id_quarto WHERE data_efetivada BETWEEN ('2004-01-15') AND ('2020-01-15')
 
 
-alter table apartamentos add foreign key(paciente) references pacientes(id_paciente);*/
+alter table apartamentos add foreign key(paciente) references pacientes(id_paciente);
 
 
 select data_entrada,procedimento,numero_quarto,tipo_quarto from internaçao inner join quarto on internaçao.quarto=quarto.id_quarto where tipo_quarto LIKE '%ap%'*/
 
 select nome_paciente,data_consulta,nome_medico from ((consultas
  inner join medicos on consultas.medico=medicos.id_medico)
- inner join pacientes on pacientes.id_paciente=consultas.paciente) where data_consulta="2004-01-18";*/
+ inner join pacientes on pacientes.id_paciente=consultas.paciente) where data_consulta="2004-01-18";
 
 select nome_paciente,nome_medico,data_entrada,especialidades,tipo_quarto
  from ((internaçao
